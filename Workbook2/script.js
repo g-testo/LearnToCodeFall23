@@ -4,17 +4,20 @@
 // Write Everything Twice
 // WET
 
-var amount = 12.50;
-var taxExempt = false;
-
-var totalDue;
-var tax;
-
-if (taxExempt) {
-    tax = 0; 
-} else {
-    tax = amount * 0.08;
+let dayNum = 10;
+let dayCategory;
+switch (dayNum) {
+    case 0:
+    case 6:
+        dayCategory = "Weekend";
+        break;
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        dayCategory = "Weekday";
+        break;
+    default:
+        dayCategory = "<unknown>";
 }
-
-totalDue = amount + tax;
-console.log(totalDue);
