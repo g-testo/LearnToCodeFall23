@@ -20,20 +20,63 @@
         window.onload = handleOnload;
 
         function handleOnload(){
-            
+            const addButtonEl = document.getElementById("addButton");
+            const subtractButtonEl = document.getElementById("subtractButton");
+            const multiplyButtonEl = document.getElementById("multiplyButton");
+            const divideButtonEl = document.getElementById("divideButton");
+
+            addButtonEl.onclick = handleAddOnclick;
+            subtractButtonEl.onclick = handleSubtractOnclick;
+            multiplyButtonEl.onclick = handleMultiplyOnclick;
+            divideButtonEl.onclick = handleDivideOnclick;
         }
 
         function handleAddOnclick(){
             console.log("Add button clicked");
+            const numberOneInputEl = document.getElementById("number1Field");
+            const numberTwoInputEl = document.getElementById("number2Field");
+            const answerInputEl = document.getElementById("answerField");
+
+            const numberOne = Number(numberOneInputEl.value);
+            const numberTwo = Number(numberTwoInputEl.value);
+
+            answerInputEl.value = numberOne + numberTwo;
+            
         }
         function handleSubtractOnclick(){
             console.log("Subtract button clicked");
+            const numberOneInputEl = document.getElementById("number1Field");
+            const numberTwoInputEl = document.getElementById("number2Field");
+            const answerInputEl = document.getElementById("answerField");
+
+            const numberOne = Number(numberOneInputEl.value);
+            const numberTwo = Number(numberTwoInputEl.value);
+
+            answerInputEl.value = numberOne - numberTwo;
         }
         function handleMultiplyOnclick(){
             console.log("Multiply button clicked");
+
+            const numberOneInputEl = document.getElementById("number1Field");
+            const numberTwoInputEl = document.getElementById("number2Field");
+            const answerInputEl = document.getElementById("answerField");
+
+            const numberOne = Number(numberOneInputEl.value);
+            const numberTwo = Number(numberTwoInputEl.value);
+
+            answerInputEl.value = numberOne * numberTwo;
         }
         function handleDivideOnclick(){
             console.log("Divide button clicked");
+
+            const numberOneInputEl = document.getElementById("number1Field");
+            const numberTwoInputEl = document.getElementById("number2Field");
+            const answerInputEl = document.getElementById("answerField");
+
+            const numberOne = Number(numberOneInputEl.value);
+            const numberTwo = Number(numberTwoInputEl.value);
+
+            answerInputEl.value = numberOne / numberTwo;
         }
     </script>
 </body>
