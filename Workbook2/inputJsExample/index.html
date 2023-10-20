@@ -22,14 +22,20 @@
 
             function handleBtnOnclick() {
                 console.log("Button clicked");
-                
+
                 const nameInputEl = document.getElementById("nameField");
                 const favAnimalInputEl = document.getElementById("favAnimalField");
 
                 const nameStr = nameInputEl.value;
                 const favAnimalStr = favAnimalInputEl.value;
 
-                const message = `Hello ${nameStr}, it's so cool that you like ${favAnimalStr}, too!`;
+                let message = `Hello ${nameStr}, it's so cool that you like ${favAnimalStr}s, too!`;
+
+                if(favAnimalStr === "Lion"){
+                    message += " You're so cool!";
+                } else {
+                    message += " You're okay...";
+                }
 
                 const messagePlaceholderEl = document.getElementById("message-placeholder");
                 messagePlaceholderEl.innerHTML = message;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Number 1: <input type="number" id="number1Field"/></p>
+    <p>Number 2: <input type="number" id="number2Field"/></p>
+
+    <input type="button" value="Add" id="addButton" />
+    <input type="button" value="Subtract" id="subtractButton" />
+    <input type="button" value="Multiply" id="multiplyButton" />
+    <input type="button" value="Divide" id="divideButton" />
+
+    <p>Answer: <input type="number" id="answerField" readonly/></p>
+
+    <script>
+        window.onload = handleOnload;
+
+        function handleOnload(){
+            
+        }
+
+        function handleAddOnclick(){
+            console.log("Add button clicked");
+        }
+        function handleSubtractOnclick(){
+            console.log("Subtract button clicked");
+        }
+        function handleMultiplyOnclick(){
+            console.log("Multiply button clicked");
+        }
+        function handleDivideOnclick(){
+            console.log("Divide button clicked");
+        }
+    </script>
+</body>
+</html>
