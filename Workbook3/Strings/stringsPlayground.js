@@ -34,12 +34,13 @@ let firstNameInput = "gReGoRiO";
 
 // Create a function that capitalizes the first character and lowercases everything else
 // Accepts a string and returns a capitalized string
+
 // .toUpperCase, .toLowerCase, .slice/.substring
 function capitalizeStr(str){
     // Access the first character in the given string and raise the case and store in a variable
     // let firstChar = str.charAt(0);
-    let firstChar = str[0];
-    // let firstChar = str.slice(0, 1);
+    // let firstChar = str[0];
+    let firstChar = str.slice(0, 1);
 
     // Access all characters after the first character and lower the case
     let restOfStr = str.slice(1);
