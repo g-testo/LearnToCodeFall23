@@ -28,27 +28,37 @@
 // let parsedNumber = parseTelephoneNumber(phone);
 
 
-let firstNameInput = "gReGoRiO";
+// let firstNameInput = "gReGoRiO";
 
-// PseudoCode
+// // PseudoCode
 
-// Create a function that capitalizes the first character and lowercases everything else
-// Accepts a string and returns a capitalized string
+// // Create a function that capitalizes the first character and lowercases everything else
+// // Accepts a string and returns a capitalized string
 
-// .toUpperCase, .toLowerCase, .slice/.substring
-function capitalizeStr(str){
-    // Access the first character in the given string and raise the case and store in a variable
-    // let firstChar = str.charAt(0);
-    // let firstChar = str[0];
-    let firstChar = str.slice(0, 1);
+// // .toUpperCase, .toLowerCase, .slice/.substring
+// function capitalizeStr(str){
+//     // Access the first character in the given string and raise the case and store in a variable
+//     // let firstChar = str.charAt(0);
+//     // let firstChar = str[0];
+//     let firstChar = str.slice(0, 1);
 
-    // Access all characters after the first character and lower the case
-    let restOfStr = str.slice(1);
+//     // Access all characters after the first character and lower the case
+//     let restOfStr = str.slice(1);
 
-    // return string after combining the first raised first character and the rest of the string that has been lower cased
-    return firstChar.toUpperCase() + restOfStr.toLowerCase();
-}
+//     // return string after combining the first raised first character and the rest of the string that has been lower cased
+//     return firstChar.toUpperCase() + restOfStr.toLowerCase();
+// }
 
-let capitalizedFirstName = capitalizeStr(firstNameInput);
+// let capitalizedFirstName = capitalizeStr(firstNameInput);
 
-console.log(capitalizedFirstName);
+// console.log(capitalizedFirstName);
+
+// let inputs = "San Francisco,Dallas,Atlanta,Hartford";
+// let array = inputs.split(",");
+// // The array resembles the following
+// //     position 0  -  value "San Francisco"
+// //     position 1  -  value "Dallas"
+// //     position 2  -  value "Atlanta"
+// //     position 3  -  value "Hartford"
+
+// console.log(array);
