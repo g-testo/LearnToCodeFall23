@@ -2,9 +2,23 @@
 
 window.onload = function(){
     let btn = document.getElementById("submitBtn");
+    let isGovtCheckboxEl = document.getElementById("govt");
 
     // Run when submit button is clicked
     btn.onclick = calcCarOptionsCost;
+    isGovtCheckboxEl.onclick = function(){
+        // isGovtCheckboxEl.disabled = true;
+        // isGovtCheckboxEl.style.display = "none";
+        let isGovtLabelEl = document.getElementById("govt-label");
+
+        isGovtLabelEl.style.visibility = "hidden";
+        isGovtCheckboxEl.style.visibility = "hidden";
+
+
+        let roadSideEl = document.getElementById("roadside");
+        roadSideEl.checked = true;
+
+    }
 
     function calcCarOptionsCost(){
         let tollTagEl = document.getElementById("tollTag");        
