@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Rental Car Options:</legend>
+        <input type="checkbox" id="tollTag" name="tollTag" value="395" checked />
+        Electronic Toll Tag ($3.95/day plus tolls)
+        <br />
+
+        <input type="checkbox" id="gps" name="gps" value="495" /> 
+        GPS ($4.95/day)
+        <br />
+
+        <input type="checkbox" id="roadside" name="roadside" value="295" />
+        Roadside Assistance ($2.95/day)
+        <br />
+        <br />
+
+        <input type="button" value="Submit" id="submitBtn" />
+
+        <br />
+        <br />
+
+        <div>Estimated car options cost: $<span id="estTotalOptionsCost">0</span>/day</div>
+    </fieldset>
+    
+    <script src="index.js"></script>
+</body>
+</html>
