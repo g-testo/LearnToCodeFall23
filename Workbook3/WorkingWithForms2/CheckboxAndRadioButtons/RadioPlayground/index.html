@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Select the policy type:</legend>
+            <input type="radio" name="policy" id="home" value="home" checked/> Home<br />
+            <input type="radio" name="policy" id="auto" value="auto" /> Auto<br />
+            <input type="radio" name="policy" id="life" value="life" /> Life<br />
+            <div id="additional-policy-container" style="display: none;">
+                <hr />
+                <p>Now select a type:</p>
+                <input type="radio" name="additional" id="car" value="car" checked /> Car<br />
+                <input type="radio" name="additional" id="boat" value="boat" /> Boat<br />
+                <input type="radio" name="additional" id="scooter" value="scooter" /> Scooter<br />
+                <input type="radio" name="additional" id="bike" value="bike" /> Bike<br />
+            </div>
+            <input type="button" value="submit" id="submit-btn" />
+        </fieldset>
+
+        <script src="index.js"></script>
+    </body>
+</html>
