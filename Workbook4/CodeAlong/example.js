@@ -102,4 +102,48 @@ const products = [
     },
     // ... more products ...
   ];
+
+  let gregsComputersComplex = [
+    {
+        brand:"Apple",
+        model:"16\" macbook pro",
+        year: 2021,
+        description: "",
+        specifications: {
+            memory: [
+                {
+                    brand:"",
+                    size: "8gb",
+                    speed:2100,
+                    manufactureDate: {
+                        year:2020,
+                        month: 1,
+                        day: 3
+                    }
+                }, {
+                    brand:"",
+                    size: "8gb",
+                    speed:2100,
+                    manufactureDate: {
+                        year:2020,
+                        month: 1,
+                        day: 10
+                    }
+                }
+            ],
+            storage: [
+                
+            ],
+            accessories: [
+
+            ]
+        }
+    },
+    {
+        brand:"Acer",
+        model:"Helios 500",
+        year: 2021,
+        description: ""
+    }
+];
   

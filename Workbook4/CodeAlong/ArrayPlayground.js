@@ -1,59 +1,47 @@
-let gregsComputersSimple = [
-    // Detail level 1
-    'Apple Macbook Pro 16"',
-    "Acer Helios 500",
-    "Chromebook",
-    "HP touchscreen",
-    'Apple Macbook Pro 15.3"',
+// let gregsComputersSimple = [
+//     // Detail level 1
+//     'Apple Macbook Pro 16"',
+//     "Acer Helios 500",
+//     "Chromebook",
+//     "HP touchscreen",
+//     'Apple Macbook Pro 15.3"',
+// ];
+
+// function getAverage(scores){
+//     console.log(scores);
+// }
+
+// getAverage([92, 98, 84, 76, 89, 99, 100]);
+
+// let animals = [
+//     "Cat", "Dog", "Lion", "Gorilla", "Fox", "Alpaca"
+// ]
+
+// animals[6] = "Sheep";
+
+// animals[animals.length] = "Capybara";
+// console.log(animals);
+
+// let indexOfFox = animals.indexOf("Fox", 5);
+// console.log(indexOfFox);
+
+// let lastIndexOfSheep = animals.lastIndexOf("Sheep", 5);
+// console.log(lastIndexOfSheep);
+
+let menu = [
+    {id: 1, item: "Tacos", category: "Meal", price: 12.29},
+    {id: 2, item: "Burger", category: "Meal", price: 7.29},
+    {id: 3, item: "Salad", category: "Meal", price: 8.29},
+    {id: 4, item: "Ice tea", category: "Drink", price: 2.19},
+    {id: 5, item: "Coke", category: "Drink", price: 2.29}
 ];
 
-let gregsComputersComplex = [
-    {
-        brand:"Apple",
-        model:"16\" macbook pro",
-        year: 2021,
-        description: "",
-        specifications: {
-            memory: [
-                {
-                    brand:"",
-                    size: "8gb",
-                    speed:2100,
-                    manufactureDate: {
-                        year:2020,
-                        month: 1,
-                        day: 3
-                    }
-                }, {
-                    brand:"",
-                    size: "8gb",
-                    speed:2100,
-                    manufactureDate: {
-                        year:2020,
-                        month: 1,
-                        day: 10
-                    }
-                }
-            ],
-            storage: [
-                
-            ],
-            accessories: [
-
-            ]
-        }
-    },
-    {
-        brand:"Acer",
-        model:"Helios 500",
-        year: 2021,
-        description: ""
+function filterByCategory(givenMenu, category){
+    let matchingMenuItems = [];
+    for(let i = 0; i < givenMenu.length;i++){
+        console.log(givenMenu[i].category);
+        
     }
-];
-
-
-function getAverage(scores){
-    console.log(scores);
 }
 
-getAverage([92, 98, 84, 76, 89, 99, 100]);
+filterByCategory(menu, "Meal");
