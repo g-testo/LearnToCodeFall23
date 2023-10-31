@@ -38,10 +38,18 @@ let menu = [
 
 function filterByCategory(givenMenu, category){
     let matchingMenuItems = [];
+
     for(let i = 0; i < givenMenu.length;i++){
-        console.log(givenMenu[i].category);
-        
+        if(givenMenu[i].category == category){
+            matchingMenuItems.push(givenMenu[i]);
+        }
     }
+
+    return matchingMenuItems;
 }
 
-filterByCategory(menu, "Meal");
+let mealMenuItems = filterByCategory(menu, "Meal");
+console.log(mealMenuItems);
+
+let drinkMenuItems = filterByCategory(menu, "Drink");
+console.log(drinkMenuItems)
