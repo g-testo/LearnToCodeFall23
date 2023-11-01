@@ -58,3 +58,4 @@ let toDoList = [
 for(let item of toDoList){
     console.log(item);
 }
+
