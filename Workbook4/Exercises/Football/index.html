@@ -9,12 +9,10 @@
         <label>Pick your Sushi</label>
         <select id="sushi-select"></select>
         <button id="learn-more-btn">Learn More</button>
+        <button id="reset">Reset</button>
         <p id="sushi-details"></p>
 
         <script>
-           // onclick
-            // Select the button
-            // Assign an onlick event
             window.onload = function () {
                 let sushiSelectEl = document.getElementById("sushi-select");
                 let sushiOptions = [
@@ -35,18 +33,29 @@
                         value: "californiaRoll",
                     },
                 ];
+
                 for (let i = 0; i < sushiOptions.length; i++) {
                     let optionData = sushiOptions[i];
-                    let optionEl = new Option(optionData.displayText, i);
+                    let optionEl = new Option(optionData.displayText, optionData.value);
                     sushiSelectEl.appendChild(optionEl);
                 }
-                let learnMoreBtn = document.getElementById("learn-more-btn");
-                learnMoreBtn.onclick = function(){
-                    let sushiDetailsEl = document.getElementById("sushi-details");
-                    let index = Number(sushiSelectEl.value);
-                    sushiDetailsEl.textContent = sushiOptions[index].displayText;
-                }
 
+                sushiSelectEl.onchange = function(){
+                    console.log("On Select Change");
+                }
+               
+
+                let learnMoreBtn = document.getElementById("learn-more-btn");
+                learnMoreBtn.onclick = function () {
+                    let sushiDetailsEl = document.getElementById("sushi-details");
+                    let index = sushiSelectEl.selectedIndex;
+                    sushiDetailsEl.textContent = sushiOptions[index].displayText;
+                };
+
+                let resetBtn = document.getElementById("reset");
+                resetBtn.onclick = function () {
+                    sushiSelectEl.selectedIndex = "0";
+                };
             };
         </script>
     </body>
