@@ -6,12 +6,13 @@
         <title>Document</title>
     </head>
     <body>
-        <label>Pick your Sushi</label>
-        <select id="sushi-select"></select>
-        <button id="learn-more-btn">Learn More</button>
-        <button id="reset">Reset</button>
+        <form id="menu-form">
+            <label>Pick your Sushi</label>
+            <select id="sushi-select"></select>
+            <button id="learn-more-btn" type="submit">Submit</button>
+            <button id="reset" >Reset</button>
+        </form>
         <p id="sushi-details"></p>
-
         <script>
             window.onload = function () {
                 let sushiSelectEl = document.getElementById("sushi-select");
@@ -40,16 +41,23 @@
                     sushiSelectEl.appendChild(optionEl);
                 }
 
-                sushiSelectEl.onchange = function(){
+                sushiSelectEl.onchange = function () {
                     console.log("On Select Change");
-                }
-               
+                };
 
-                let learnMoreBtn = document.getElementById("learn-more-btn");
-                learnMoreBtn.onclick = function () {
+                // let learnMoreBtn = document.getElementById("learn-more-btn");
+                // learnMoreBtn.onclick = function () {
+                //     let sushiDetailsEl = document.getElementById("sushi-details");
+                //     let index = sushiSelectEl.selectedIndex;
+                //     sushiDetailsEl.textContent = sushiOptions[index].displayText;
+                // };
+
+                let menuFormEl = document.getElementById("menu-form");
+                menuFormEl.onsubmit = function () {
                     let sushiDetailsEl = document.getElementById("sushi-details");
                     let index = sushiSelectEl.selectedIndex;
                     sushiDetailsEl.textContent = sushiOptions[index].displayText;
+                    return false;
                 };
 
                 let resetBtn = document.getElementById("reset");
