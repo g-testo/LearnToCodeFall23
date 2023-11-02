@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label>Pick your Sushi</label>
+        <select id="sushi-select"></select>
+        <button id="learn-more-btn">Learn More</button>
+        <p id="sushi-details"></p>
+
+        <script>
+           // onclick
+            // Select the button
+            // Assign an onlick event
+            window.onload = function () {
+                let sushiSelectEl = document.getElementById("sushi-select");
+                let sushiOptions = [
+                    {
+                        displayText: "Sashimi ($19.99)",
+                        value: "sashimi",
+                    },
+                    {
+                        displayText: "Nigiri ($12.99)",
+                        value: "nigiri",
+                    },
+                    {
+                        displayText: "Ramen ($23.99)",
+                        value: "ramen",
+                    },
+                    {
+                        displayText: "California Roll (10.99)",
+                        value: "californiaRoll",
+                    },
+                ];
+                for (let i = 0; i < sushiOptions.length; i++) {
+                    let optionData = sushiOptions[i];
+                    let optionEl = new Option(optionData.displayText, i);
+                    sushiSelectEl.appendChild(optionEl);
+                }
+                let learnMoreBtn = document.getElementById("learn-more-btn");
+                learnMoreBtn.onclick = function(){
+                    let sushiDetailsEl = document.getElementById("sushi-details");
+                    let index = Number(sushiSelectEl.value);
+                    sushiDetailsEl.textContent = sushiOptions[index].displayText;
+                }
+
+            };
+        </script>
+    </body>
+</html>
+<!-- 1: Understand the problem -->
+
+<!-- 2: Create a plan -->
+<!-- Create label for select element -->
+<!-- Create a select tag in HTML with id of "sushi-select" X -->
+<!-- Create options tags inside select tag above  X -->
+<!-- Create button tag that says "Learn More" with id of "learn-more-btn" X -->
+<!-- Create placeholder(p tag) with id of "sushi-details" X-->
+
+<!-- Create JS for our HTML X-->
+<!-- Delete static option tags X -->
+<!-- Create an array of all sushi X -->
+<!-- Loop through sushi array X -->
+<!-- Create option tag with values X -->
+<!-- Append it to the select tag X -->
+<!-- Add event handler to our button -->
+<!-- TEST: console.log the value of the selected option -->
+<!-- Place the details of our sushi into the "sushi-details" El -->
+<!-- Profit!!!! -->
+
+<!-- 3: Code -->
+<!-- 4: Look back -->
