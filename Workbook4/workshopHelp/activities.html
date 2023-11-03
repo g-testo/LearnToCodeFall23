@@ -4,32 +4,43 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            #select-activities{
+                visibility: hidden;
+            }
+        </style>
     </head>
     <body>
         <select id="select-categories"></select>
 
-        <!-- <select>
-        <option>Valley Hot Air Balloons</option>
-        <option>River Runners: Float Trip</option>
-        <option>River Runners: Ride the Rapids</option>
-    </select> -->
+        <select id="select-activities"></select>
 
         <script>
+            let selectCategoriesEl = document.getElementById("select-categories");
+
             window.onload = function () {
                 populateCategoryDropdown();
-            };
+                selectCategoriesEl.onchange = function(){
+                    let selectActivitiesEl = document.getElementById("select-activities");
+                    selectActivitiesEl.style.visibility = "visible";
+                    selectActivitiesEl.options.length = 0;
 
+                    // For loop with activities
+                        // filter activities by selectCategoriesEl.value
+
+                    let option1 = new Option("Valley Hot Air Balloons");
+                    let option2 = new Option("River Runners: Float Trip");
+                    let option3 = new Option("River Runners: Ride the Rapids");
+                    selectActivitiesEl.appendChild(option1);
+                    selectActivitiesEl.appendChild(option2);
+                    selectActivitiesEl.appendChild(option3);
+                }
+            };
             function populateCategoryDropdown() {
-                let selectCategoriesEl = document.getElementById("select-categories");
                 let categories = ["Adventures", "Arts & Crafts", "Museums", "Wine Tastings", "Other"];
                 for (let i = 0; i < categories.length; i++) {
                     let categoryName = categories[i];
-
-                    // let element = document.createElement("option"); // <option></option>
-                    // element.textContent = categoryName; // <option>Adventures</option>
-
                     let categoryOption = new Option(categoryName);
-
                     selectCategoriesEl.appendChild(categoryOption);
                 }
             }
