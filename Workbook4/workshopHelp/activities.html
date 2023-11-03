@@ -17,12 +17,8 @@
 
         <script>
             let selectCategoriesEl = document.getElementById("select-categories");
-
-            window.onload = function () {
-                populateCategoryDropdown();
-                selectCategoriesEl.onchange = function(){
-
-                    let activities = [
+            let selectActivitiesEl = document.getElementById("select-activities");
+            let activities = [
    {
         category: "Adventures", 
         id: "A101", 
@@ -121,31 +117,41 @@
     }
 ];
 
-                    let selectActivitiesEl = document.getElementById("select-activities");
+            window.onload = function () {
+                populateCategoryDropdown();
+                selectCategoriesEl.onchange = function(){
+
+
                     selectActivitiesEl.style.visibility = "visible"; // Unhiding activities selection
                     selectActivitiesEl.options.length = 0; // Reseting all options
 
-                    console.log(selectCategoriesEl.value, activities);
                     // For loop with activities
                         // filter activities by selectCategoriesEl.value
 
-                    for(let activity of activities){
-                        let selectedCategory = selectCategoriesEl.value; // "Adventure"
+                    let option = new Option("");
+                    selectActivitiesEl.appendChild(option);
 
+                    for(let activity of activities){
+                        let selectedCategory = selectCategoriesEl.value;
+
+                        // Only add
                         if(activity.category === selectedCategory){
                             let option = new Option(activity.name);
                             selectActivitiesEl.appendChild(option);
                         }
                     }
 
-                    // let option1 = new Option("Valley Hot Air Balloons");
-                    // selectActivitiesEl.appendChild(option1);
+                }
+                selectActivitiesEl.onchange = function(){
+                    let activitySelected = selectActivitiesEl.value;
 
-                    // let option2 = new Option("River Runners: Float Trip");
-                    // selectActivitiesEl.appendChild(option2);
-
-                    // let option3 = new Option("River Runners: Ride the Rapids");
-                    // selectActivitiesEl.appendChild(option3);
+                    for(let activity of activities){
+                        if(activity.name === activitySelected){
+                            console.log(activity);
+                        }
+                    }
+                    
+                    console.log("trigger", selectActivitiesEl.value);
                 }
             };
             function populateCategoryDropdown() {
