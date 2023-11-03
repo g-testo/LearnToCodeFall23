@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <select id="select-categories"></select>
+
+        <!-- <select>
+        <option>Valley Hot Air Balloons</option>
+        <option>River Runners: Float Trip</option>
+        <option>River Runners: Ride the Rapids</option>
+    </select> -->
+
+        <script>
+            window.onload = function () {
+                populateCategoryDropdown();
+            };
+
+            function populateCategoryDropdown() {
+                let selectCategoriesEl = document.getElementById("select-categories");
+                let categories = ["Adventures", "Arts & Crafts", "Museums", "Wine Tastings", "Other"];
+                for (let i = 0; i < categories.length; i++) {
+                    let categoryName = categories[i];
+
+                    // let element = document.createElement("option"); // <option></option>
+                    // element.textContent = categoryName; // <option>Adventures</option>
+
+                    let categoryOption = new Option(categoryName);
+
+                    selectCategoriesEl.appendChild(categoryOption);
+                }
+            }
+        </script>
+    </body>
+</html>
