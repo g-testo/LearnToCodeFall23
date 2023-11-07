@@ -38,7 +38,30 @@ let courses = [
 
 
 // When does the PROG200 course start?
+let prog200Course = courses.find(function(course){
+    return course.CourseId === "PROG200";
+});
+console.log(prog200Course.StartDate);
+
 // What is the title of the PROJ500 course?
+let proj500Course = courses.find(function(course){
+    return course.CourseId === "PROJ500";
+});
+console.log(proj500Course.Title);
 
 // What are the titles of the courses that cost $50 or less?
+let cheapCourses = courses.filter(function(course){
+    return Number(course.Fee) <= 50;
+});
+
+for(let course of cheapCourses){
+    console.log(course.Title);
+}
+
 // What classes meet in "Classroom 1"?
+
+let classroom1Courses = courses.filter(function(course){
+    return course.Location === "Classroom 1";
+});
+
+console.log(classroom1Courses);
