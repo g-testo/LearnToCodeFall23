@@ -1,12 +1,22 @@
-let person1 = { name: "Pursalane", age: 11, gender: "Female" };
-let person2 = { firstName: "John", lastName: "Smith", username: "", age: 14, gender: "Male" };
+// let person1 = { name: "Pursalane", age: 11, gender: "Female" };
+// let person2 = { firstName: "John", lastName: "Smith", username: "", age: 14, gender: "Male" };
 
-let nameDot = person1.name;
-let nameBracket = person1["name"];
+// let nameDot = person1.name;
+// let nameBracket = person1["name"];
 
-console.log(nameDot, nameBracket);
+// console.log(nameDot, nameBracket);
 
-for(let key in person2){
-    console.log(key);
-    console.log(person2[key]);
-}
+// for(let key in person2){
+//     console.log(key);
+//     console.log(person2[key]);
+// }
+
+
+// let person2 = { firstName: "John", lastName: "Smith", username: "", age: 14, gender: "Male" };
+
+// let keys = Object.keys(person2);
+// console.log(keys);
+
+// for(let key of keys){
+//     console.log(person2[key]);
+// }
