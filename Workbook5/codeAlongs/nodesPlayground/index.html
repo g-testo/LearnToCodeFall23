@@ -9,6 +9,7 @@
 
         <button id="add-node-div">Add Node</button>
         <button id="remove-node-div">Remove Node</button>
+        <button id="replace-node-div">Replace Last Node</button>
 
         <div id="parent-div"></div>
 
@@ -20,6 +21,7 @@
 
                 let addNodeBtn = document.querySelector("#add-node-div");
                 let removeNodeBtn = document.querySelector("#remove-node-div");
+                let replaceNodeBtn = document.querySelector("#replace-node-div")
 
                 addNodeBtn.onclick = () => {
                     let newDiv = document.createElement("div");
@@ -27,12 +29,25 @@
 
                     parentDiv.appendChild(newDiv);
                 };
+                
                 removeNodeBtn.onclick = () => {
                     let descendants = document.querySelectorAll("#parent-div div");
                     let lastIndex = descendants.length - 1;
                     let lastEl = descendants[lastIndex];
                     parentDiv.removeChild(lastEl);
                 };
+
+                replaceNodeBtn.onclick = () => {
+                    let replacementNode = document.createElement("img");
+                    replacementNode.src = "https://media.istockphoto.com/id/1331228142/vector/male-lion-face-icon.jpg?s=612x612&w=0&k=20&c=Ac01LXRwFuEhiIQav65iakOB1-04_Dmh-sS23judEOo=";
+                    replacementNode.width = "50";
+
+                    let descendants = document.querySelectorAll("#parent-div div");
+                    let lastIndex = descendants.length - 1;
+                    let lastEl = descendants[lastIndex];
+
+                    parentDiv.replaceChild(replacementNode, lastEl);
+                }
             };
         </script>
     </body>
