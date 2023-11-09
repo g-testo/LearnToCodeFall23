@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+
+        <button id="add-node-div">Add Node</button>
+        <button id="remove-node-div">Remove Node</button>
+
+        <div id="parent-div"></div>
+
+        <ol id="parent-ol"></ol>
+
+        <script>
+            window.onload = () => {
+                let parentDiv = document.querySelector("#parent-div");
+
+                let addNodeBtn = document.querySelector("#add-node-div");
+                let removeNodeBtn = document.querySelector("#remove-node-div");
+
+                addNodeBtn.onclick = () => {
+                    let newDiv = document.createElement("div");
+                    newDiv.textContent = "Added child";
+
+                    parentDiv.appendChild(newDiv);
+                };
+                removeNodeBtn.onclick = () => {
+                    let descendants = document.querySelectorAll("#parent-div div");
+                    let lastIndex = descendants.length - 1;
+                    let lastEl = descendants[lastIndex];
+                    parentDiv.removeChild(lastEl);
+                };
+            };
+        </script>
+    </body>
+</html>
