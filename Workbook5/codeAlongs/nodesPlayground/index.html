@@ -29,7 +29,7 @@
 
                     parentDiv.appendChild(newDiv);
                 };
-                
+
                 removeNodeBtn.onclick = () => {
                     let descendants = document.querySelectorAll("#parent-div div");
                     let lastIndex = descendants.length - 1;
@@ -38,10 +38,12 @@
                 };
 
                 replaceNodeBtn.onclick = () => {
+                    // Created a new element to replace the last node
                     let replacementNode = document.createElement("img");
                     replacementNode.src = "https://media.istockphoto.com/id/1331228142/vector/male-lion-face-icon.jpg?s=612x612&w=0&k=20&c=Ac01LXRwFuEhiIQav65iakOB1-04_Dmh-sS23judEOo=";
                     replacementNode.width = "50";
 
+                    // Retrieved all children divs and chose the last one
                     let descendants = document.querySelectorAll("#parent-div div");
                     let lastIndex = descendants.length - 1;
                     let lastEl = descendants[lastIndex];

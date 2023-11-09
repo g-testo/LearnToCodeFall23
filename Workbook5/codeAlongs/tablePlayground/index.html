@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            td {
+                padding: 0 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Average Temps By Month</h2>
+        <table id="averageTempsTbl">
+            <tr>
+                <th>Month</th>
+                <th>Average Tempature (°C)</th>
+            </tr>
+            <!-- <tr>
+            <td>January</td>
+            <td>5</td>
+        </tr> -->
+        </table>
+        <script>
+            window.onload = () => {
+                loadTempsIntoTable();
+            };
+
+            let loadTempsIntoTable = () => {
+                let temps = [
+                    { month: "January", degrees: 5 },
+                    { month: "February", degrees: 7 },
+                    { month: "March", degrees: 10 },
+                    { month: "April", degrees: 15 },
+                    { month: "May", degrees: 20 },
+                    { month: "June", degrees: 25 },
+                    { month: "July", degrees: 30 },
+                    { month: "August", degrees: 30 },
+                    { month: "September", degrees: 25 },
+                    { month: "October", degrees: 18 },
+                    { month: "November", degrees: 10 },
+                    { month: "December", degrees: 6 },
+                ];
+
+                let tempsTable = document.getElementById("averageTempsTbl");
+
+                let insertTemp = (temp) => {
+                    let row = tempsTable.insertRow(-1);
+
+                    let monthCell = row.insertCell(0);
+                    let degreeCell = row.insertCell(1);
+
+                    monthCell.innerHTML = temp.month;
+                    degreeCell.innerHTML = temp.degrees;
+                }
+
+                for (let temp of temps) {
+                    insertTemp(temp);
+                }
+            };
+        </script>
+    </body>
+</html>
