@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .roundedImg {
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img src="https://media.istockphoto.com/id/877369086/photo/lion-panthera-leo-10-years-old-isolated-on-white.jpg?s=612x612&w=0&k=20&c=J__Jx_BX_FN7iehO965TJtPFYUl0A-bwFgIYaK32R3Y=" /> 
+            <p>describe image above</p>
+        </div>
+        <div>
+            <img src="https://media.istockphoto.com/id/1354939778/photo/close-up-of-a-roaring-lion.jpg?s=612x612&w=0&k=20&c=pEPRlwNwzj2vPTXvqA9WxNV7QSSBDe9kPfWxjyqLSgc=" /> 
+            <p>describe image above</p>
+        </div>
+        <div>
+            <img src="https://media.istockphoto.com/id/913059310/vector/lion-head.jpg?s=612x612&w=0&k=20&c=r8B8hgKJMZIJGLco_NjFSbd6eg2smNv-edCt7BAUgY0=" /> 
+            <p>describe image above</p>
+        </div>
+        <script>
+            window.onload = ()=>{
+                let paragraphs = document.getElementsByTagName("p");
+                let images = document.getElementsByTagName("img");
+                
+                for(let paragraph of paragraphs){
+                    paragraph.style.border = "solid 1px black";
+                }
+                for(let image of images){
+                    image.style.width = "75px";
+                    image.classList.add("roundedImg");
+                }
+                // for(let i=0;i<paragraphs.length;i++){
+                //     let paragraph = paragraphs[i];
+                //     paragraph.style.border = "solid 1px black";
+                // }
+            }
+        </script>
+    </body>
+</html>

@@ -8,24 +8,37 @@
     <body>
         <div class="element"></div>
         <div class="element"></div>
+        <div class="element active"></div>
         <div class="element"></div>
-        <div class="element"></div>
-        <div class="element"></div>
-        <div class="element"></div>
+        <div class="element" name="singled-out"></div>
+        <div class="element" name="singled-out"></div>
 
-        
-        
-
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
 
         <script>
             // Arrayish thing > HTML Collection
             let elements = document.getElementsByClassName("element");
+            // let elements = document.getElementsByTagName("div");
+
             // Convert to Array
             let elArr = Array.from(elements);
 
-            let mappedEls = elArr.map((el, index)=>{
+            elArr.forEach((el, index) => {
                 el.innerHTML = "Element " + (index + 1);
             });
+
+            let activeElement = document.querySelector(".element.active");
+            activeElement.style.color = "red";
+
+            let singledOutElements = document.querySelectorAll('div[name="singled-out"]');
+
+            for(let i=0;i<singledOutElements.length;i++){
+                singledOutElements[i].style.color = "blue";
+            }
         </script>
     </body>
 </html>
