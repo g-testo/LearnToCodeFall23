@@ -57,15 +57,42 @@
     // console.log(mappedNumArr);
 
 // .find
-    // Method Docs:
 
-    let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
-    let strArr = ["Lions", "Tigers", "And", "Bears"];
+    // Method Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 
+    // let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
     // What are the inputs?
-        // Acts upon:
-        // Arguments:
+        // Acts upon: Array
+        // Arguments: Callback Function
 
-    // What are the outputs? (What does it return?):
+    // What are the outputs? (What does it return?): First elements it finds
 
-    // Does it change the original? (Is it destructive?):
+    // Does it change the original? (Is it destructive?): False
+
+    // Falsey: 0, "", NaN, null, undefined, false, 
+    // 1 % 2 equals 1
+    // 2 % 2 equals 0
+    // 3 % 2 equals 1
+    // 4 % 2 equals 0
+    // 5 % 2 equals 1
+    // 6 % 2 equals 0
+
+    // let firstEvenNum = numArr.find((num)=>{
+    //     return num % 2 === 0;
+    // })
+
+    // console.log(firstEvenNum);
+
+    // let strArr = ["Lions", "Tigers", "And", "Bears"];
+
+    // let firstStrThatStartsWithB = strArr.find((str)=>{
+    //     // Find the first character in the string
+    //     let firstLetter = str[0].toLowerCase(); // str.charAt(0);
+
+    //     console.log(firstLetter)
+
+    //     // Ask if the first character is "b", case insensative and then return true
+    //     return firstLetter === "b";
+    // })
+
+    // console.log(firstStrThatStartsWithB);
