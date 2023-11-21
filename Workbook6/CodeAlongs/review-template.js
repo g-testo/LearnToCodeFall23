@@ -53,47 +53,20 @@
 
     // Does it change the original? (Is it destructive?):
 
-// Add/Remove
-    // .push
+    // Add/Remove
+        // .push
+        // .shift
+        // .unshift
+        // .pop
+        
         // Method Docs:
+            // What are the inputs?
+                // Acts upon:
+                // Arguments:
 
-        // What are the inputs?
-            // Acts upon:
-            // Arguments:
+            // What are the outputs? (What does it return?):
 
-        // What are the outputs? (What does it return?):
-
-        // Does it change the original? (Is it destructive?):
-
-    // .shift
-        // Method Docs:
-        // What are the inputs?
-            // Acts upon:
-            // Arguments:
-
-        // What are the outputs? (What does it return?):
-
-        // Does it change the original? (Is it destructive?):
-
-    // .unshift
-        // Method Docs:
-        // What are the inputs?
-            // Acts upon:
-            // Arguments:
-
-        // What are the outputs? (What does it return?):
-
-        // Does it change the original? (Is it destructive?):
-
-    // .pop
-        // Method Docs:
-        // What are the inputs?
-            // Acts upon:
-            // Arguments:
-
-        // What are the outputs? (What does it return?):
-
-        // Does it change the original? (Is it destructive?):
+            // Does it change the original? (Is it destructive?):
 
 // .join
     // Method Docs:
@@ -106,6 +79,16 @@
     // Does it change the original? (Is it destructive?):
 
 // .slice
+    // Method Docs:
+    // What are the inputs?
+        // Acts upon:
+        // Arguments:
+
+    // What are the outputs? (What does it return?):
+
+    // Does it change the original? (Is it destructive?):
+
+// .splice
     // Method Docs:
     // What are the inputs?
         // Acts upon:

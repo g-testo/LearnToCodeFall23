@@ -96,3 +96,21 @@
     // })
 
     // console.log(firstStrThatStartsWithB);
+
+    // .push
+    // Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+    // .shift
+    // Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+    // .unshift
+    // Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+    // .pop
+    // Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+
+    // Method Docs:
+        // What are the inputs?
+            // Acts upon:
+            // Arguments:
+
+        // What are the outputs? (What does it return?):
+
+        // Does it change the original? (Is it destructive?):
