@@ -106,11 +106,57 @@
     // .pop
     // Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
 
+    // let numArr = [0, 9, 8, 7, 6, 5, 4, 3, 2];
+
+    // numArr.push(1, 11);
+
+    // console.log(numArr);
+
+    // console.log(result);
+
     // Method Docs:
         // What are the inputs?
-            // Acts upon:
-            // Arguments:
+            // Acts upon: Array
+            // Arguments: the value of the item(s) you want to add to the end of the array
 
-        // What are the outputs? (What does it return?):
+        // What are the outputs? (What does it return?): the new length of the array
 
-        // Does it change the original? (Is it destructive?):
+        // Does it change the original? (Is it destructive?): True
+
+
+        // let oneToOneHundred = [1,2,3,4,5,6,7,8,...];
+        // let countArr = [];
+        // for(let i=1;i<1_000_001;i++){
+        //     countArr.push(i);
+        // }
+        // console.log(countArr);
+
+        // let normalWord = "bird";
+
+        // let reversedWord = [];
+        // for(let i = normalWord.length-1;i>=0;i--){
+        //     reversedWord.push(normalWord[i]);
+        // }
+
+        // console.log(reversedWord.join(""));
+
+        // let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
+
+        // let result = numArr.pop();
+
+        // console.log(result);
+        // console.log(numArr);
+
+        // let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
+
+        // // let result = numArr.shift();
+
+        // // console.log(result);
+        // // console.log(numArr);
+
+        // numArr.unshift(12, 11, 10);
+        // numArr.pop();
+
+        // console.log(numArr);
+
+        //
