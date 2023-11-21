@@ -8,8 +8,8 @@
 
 // Methods: 
 
-let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
-let strArr = ["Lions", "Tigers", "And", "Bears"];
+// let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
+// let strArr = ["Lions", "Tigers", "And", "Bears"];
 
 // .forEach
 
@@ -23,10 +23,49 @@ let strArr = ["Lions", "Tigers", "And", "Bears"];
 
 // Does it change the original? (Is it destructive?) No
 
-numArr.forEach((num)=>{
-    console.log(num);
-})
+// numArr.forEach((num)=>{
+//     console.log(num);
+// })
 
-strArr.forEach((str)=>{
-    console.log(str);
-})
+// strArr.forEach((str)=>{
+//     console.log(str);
+// })
+
+// .map
+
+    // What are the inputs?
+        // Acts upon: Array
+        // Arguments: Callback Function
+
+    // What are the outputs? (What does it return?): (new, modified) Array
+
+    // Does it change the original? (Is it destructive?): False
+
+    // let numArr = [9, 8, 7, 6, 5, 4, 3, 2]; // [ "$9.00", "$8.00" ...]
+    // let strArr = ["Lions", "Tigers", "And", "Bears"]; // ["LIONS!", "TIGERS!", "AND!", "BEARS!"]
+
+
+    // let mappedStrArr = strArr.map((str)=>{
+    //     return str.toUpperCase() + "!";
+    // })
+
+    // console.log(mappedStrArr)
+
+    // let mappedNumArr = numArr.map((num)=>{
+    //     return "$" + num + ".00";
+    // })
+    // console.log(mappedNumArr);
+
+// .find
+    // Method Docs:
+
+    let numArr = [9, 8, 7, 6, 5, 4, 3, 2];
+    let strArr = ["Lions", "Tigers", "And", "Bears"];
+
+    // What are the inputs?
+        // Acts upon:
+        // Arguments:
+
+    // What are the outputs? (What does it return?):
+
+    // Does it change the original? (Is it destructive?):

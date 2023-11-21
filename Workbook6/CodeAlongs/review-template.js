@@ -21,7 +21,7 @@
     // Does it change the original? (Is it destructive?):
 
 // .map
-    // Method Docs:
+    // Method Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
     // What are the inputs?
         // Acts upon:
@@ -32,7 +32,7 @@
     // Does it change the original? (Is it destructive?):
 
 // .find
-    // Method Docs:
+    // Method Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 
     // What are the inputs?
         // Acts upon:
