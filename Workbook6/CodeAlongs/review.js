@@ -9,50 +9,13 @@
 
 // Methods: 
 
-// .map
-
-
-// ****************************************
-
-
-// Strings
-
-// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-
-// ****************************************
-
-// Objects
-
-// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-// ****************************************
-
-// Numbers
-
-// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
-// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-
-// ****************************************
-
-
-
 // .forEach
 
-// .split
-
-// .join
-
-// .substring
-
-// .slice
+// .map
 
 // .find
 
 // .filter
-
-// .reduce
-
-// .sort
 
 // .push
 
@@ -62,13 +25,81 @@
 
 // .pop
 
-// .indexOf
+// .join
 
-// .toString
+// .slice
 
-// .firstIndexOf
+// .reduce
+
+// .sort
+
+// .includes
 
 // .reverse
 
-// parseInt, .floor, .ceil, .round
+// .indexOf
 
+// .firstIndexOf
+
+// ****************************************
+
+// Strings
+
+// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+// Methods:
+
+// .split
+
+// .includes
+
+// .substring
+
+// .slice
+
+// .charAt
+
+// .replace
+
+// .replaceAll
+
+// .match
+
+// .startsWith / .endsWith
+
+// .repeat
+
+// .toUpperCase / .toLowerCase
+
+// .trim
+
+// ****************************************
+
+// Objects
+
+// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+// .entries
+
+// .keys
+
+// .values
+
+// ****************************************
+
+// Numbers
+
+// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+// Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+// .toString
+
+// parseInt
+
+// .floor
+
+// .ceil
+
+// .round
+
+// ****************************************
