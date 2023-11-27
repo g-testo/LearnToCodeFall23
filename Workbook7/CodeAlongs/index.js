@@ -52,7 +52,7 @@
     // /api/cars/3182
 
 // News website
-// Resource: article
+// Resource: articles
 
 // get
     // /api/articles
@@ -76,4 +76,18 @@
     // }
 // delete
     // /api/articles/11
+
+
+// Get
+// https://jsonplaceholder.typicode.com/todos
+// Get
+// https://jsonplaceholder.typicode.com/todos/1
+// Post
+// https://jsonplaceholder.typicode.com/todos
+// With body
+// Put
+// https://jsonplaceholder.typicode.com/todos/5
+// With body
+// Delete
+// https://jsonplaceholder.typicode.com/todos/42
 
