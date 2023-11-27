@@ -1,0 +1,10 @@
+{
+    "name": "Gregorio",
+    "location": {
+        "name": "NYC",
+        "state": "New York"
+    },
+    "hobbies": [
+        "Photography"
+    ]
+}
