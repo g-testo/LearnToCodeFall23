@@ -17,6 +17,38 @@
 
         <h1>Todo</h1>
 
-        <script></script>
+        <!-- <input id="todo-id" type="number" placeholder="Todo id" /> -->
+        <select id="todo-select"></select>
+        <button id="todo-id-submit">Submit</button>
+
+        <div id="msg-text"></div>
+
+        <script>
+            window.onload = () => {
+                let submitBtn = document.getElementById("todo-id-submit");
+                let todoSelect = document.getElementById("todo-select");
+
+                fetch("https://jsonplaceholder.typicode.com/todos")
+                    .then((res) => res.json())
+                    .then((todos)=>{
+                        for(let todo of todos){
+                            let optionEl = new Option(todo.id);
+                            todoSelect.appendChild(optionEl);
+                        }
+                    });
+
+
+                submitBtn.onclick = () => {
+                    // let todoInputEl = document.getElementById("todo-id");
+                    // "https://jsonplaceholder.typicode.com/todos/1"
+                    fetch("https://jsonplaceholder.typicode.com/todos/" + todoSelect.value)
+                        .then((res) => res.json())
+                        .then((todo) => {
+                            let msgText = document.getElementById("msg-text");
+                            msgText.textContent = todo.title;
+                        });
+                };
+            };
+        </script>
     </body>
 </html>
