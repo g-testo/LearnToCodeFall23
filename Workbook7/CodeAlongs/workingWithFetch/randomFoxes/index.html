@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="fox-image-container"></div>
+
+        <script>
+            window.onload = () => {
+                fetch("https://randomfox.ca/floof/")
+                    .then((res) => res.json())
+                    .then((randomFox) => {
+                        let foxImageContainerEl = document.getElementById("fox-image-container");
+                        
+                        let foxImageEl = document.createElement("img");
+                        foxImageEl.src = randomFox.image;
+                        foxImageEl.alt = "random fox";
+                        foxImageEl.width = 200;
+
+                        foxImageContainerEl.appendChild(foxImageEl);
+                    });
+            };
+        </script>
+    </body>
 </html>
