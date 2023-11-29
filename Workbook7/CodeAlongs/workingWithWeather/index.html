@@ -13,6 +13,7 @@
         <script>
             window.onload = () => {
                 let citySelector = document.getElementById("city-selector");
+                let forecastTable = document.getElementById("forecast-table");
 
                 let cities = [
                     {
@@ -42,6 +43,19 @@
                 citySelector.onchange = () => {
                     let cityIndex = citySelector.selectedIndex;
                     let cityObj = cities[cityIndex];
+                    forecastTable.innerHTML = "";
+
+                    let row = forecastTable.insertRow();
+
+                    let timeOfDayCell = row.insertCell(0);
+                    let tempCell = row.insertCell(1);
+                    let windsCell = row.insertCell(2);
+                    let summaryCell = row.insertCell(3);
+
+                    timeOfDayCell.innerHTML = "Time of day";
+                    tempCell.innerHTML = "Temp";
+                    windsCell.innerHTML = "Winds";
+                    summaryCell.innerHTML = "Summary";
 
                     fetch(`https://api.weather.gov/points/${cityObj.latitude},${cityObj.longitude}`)
                         .then((res) => res.json())
@@ -50,10 +64,22 @@
                             let forecastURL = areaDetails.properties.forecast;
                             fetch(forecastURL)
                                 .then((res) => res.json())
-                                .then((forecastDetails)=>{
-                                    let weatherArr = forecastDetails.properties.periods;
-                                    console.log(weatherArr);
-                                })
+                                .then((forecastDetails) => {
+                                    let forecastPeriods = forecastDetails.properties.periods;
+                                    forecastPeriods.forEach((forecastPeriod) => {
+                                        let row = forecastTable.insertRow(-1);
+
+                                        let timeOfDayCell = row.insertCell(0);
+                                        let tempCell = row.insertCell(1);
+                                        let windsCell = row.insertCell(2);
+                                        let summaryCell = row.insertCell(3);
+
+                                        timeOfDayCell.innerHTML = forecastPeriod.name;
+                                        tempCell.innerHTML = `${forecastPeriod.temperature} ${forecastPeriod.temperatureUnit}`;
+                                        windsCell.innerHTML = `${forecastPeriod.windDirection} ${forecastPeriod.windSpeed}`;
+                                        summaryCell.innerHTML = forecastPeriod.shortForecast;
+                                    });
+                                });
                         });
                 };
             };
