@@ -8,6 +8,8 @@
     <body>
         <select id="city-selector"></select>
 
+        <table id="forecast-table"></table>
+
         <script>
             window.onload = () => {
                 let citySelector = document.getElementById("city-selector");
@@ -43,8 +45,15 @@
 
                     fetch(`https://api.weather.gov/points/${cityObj.latitude},${cityObj.longitude}`)
                         .then((res) => res.json())
-                        .then((data) => {
-                            console.log(data);
+                        .then((areaDetails) => {
+                            console.log(areaDetails);
+                            let forecastURL = areaDetails.properties.forecast;
+                            fetch(forecastURL)
+                                .then((res) => res.json())
+                                .then((forecastDetails)=>{
+                                    let weatherArr = forecastDetails.properties.periods;
+                                    console.log(weatherArr);
+                                })
                         });
                 };
             };
