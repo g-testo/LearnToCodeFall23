@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <select id="city-selector"></select>
+
+        <script>
+            window.onload = () => {
+                let citySelector = document.getElementById("city-selector");
+
+                let cities = [
+                    {
+                        name: "--Select City--",
+                    },
+                    {
+                        name: "Benbrook, TX",
+                        latitude: 32.6732,
+                        longitude: -97.4606,
+                    },
+                    {
+                        name: "San Francisco, CA",
+                        latitude: 37.7666,
+                        longitude: -122.4538,
+                    },
+                    {
+                        name: "New York City, NY",
+                        latitude: 40.7538,
+                        longitude: -73.9833,
+                    },
+                ];
+                for (let city of cities) {
+                    let optionEl = new Option(city.name);
+                    citySelector.appendChild(optionEl);
+                }
+
+                citySelector.onchange = () => {
+                    let cityIndex = citySelector.selectedIndex;
+                    let cityObj = cities[cityIndex];
+
+                    fetch(`https://api.weather.gov/points/${cityObj.latitude},${cityObj.longitude}`)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            console.log(data);
+                        });
+                };
+            };
+        </script>
+    </body>
+</html>
