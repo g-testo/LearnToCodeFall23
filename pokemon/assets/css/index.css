@@ -13,7 +13,13 @@ nav {
     border-radius: 50%;
 }
 
+#home .icon-container{
+    border: solid black 1px;
+    padding: 2px;
+}
+
 #home .icon-container img{
+    /* border: solid black 1px; */
     width: 50px;
 }
 
