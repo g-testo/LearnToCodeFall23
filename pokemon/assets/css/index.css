@@ -1,5 +1,9 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+}
+
 nav {
-    border: solid black 1px;
+    /* border: solid black 1px; */
 }
 
 #logo {
@@ -13,31 +17,48 @@ nav {
     border-radius: 50%;
 }
 
+#home #search-sort-filter-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #home .icon-container{
-    border: solid black 1px;
-    padding: 2px;
+    /* border: solid black 1px; */
+    padding: 12px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: .66s;
+    border-radius: 10px;
+}
+
+#home .icon-container:hover{
+    background-color: #ffebeb;
 }
 
 #home .icon-container img{
     /* border: solid black 1px; */
     width: 50px;
+    margin:10px;
 }
 
 #home #list {
-    border: solid black 1px;
+    /* border: solid black 1px; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 30px;
+    padding: 20px 30px;
     max-width: 800px;
     margin: 0 auto;
 }
 
 #home .card {
-    border: solid black 1px;
+    /* border: solid black 1px; */
 }
 
 #home .thumbnail {
-    border: solid black 1px;
+    /* border: solid black 1px; */
     width: 150px;
     height: 150px;
     background-position: center;
@@ -47,12 +68,31 @@ nav {
 }
 
 #home .details {
-    border: solid black 1px;
-    font-family: 'Press Start 2P', cursive;
+    /* border: solid black 1px; */
     padding:10px;
     font-size: .8em;
 }
 
 #home .details div{
     padding:5px;
+}
+
+.custom-shape-divider-top-1701369213 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1701369213 svg {
+    position: relative;
+    display: block;
+    width: calc(228% + 1.3px);
+    height: 121px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1701369213 .shape-fill {
+    fill: #ffebeb;
 }
