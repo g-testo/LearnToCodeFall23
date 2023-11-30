@@ -1,5 +1,5 @@
 nav {
-    border: solid black 1px;
+    /* border: solid black 1px; */
 }
 
 #logo {
@@ -14,22 +14,32 @@ nav {
 }
 
 #home #list {
-    border: solid black 1px;
+    /* border: solid black 1px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 #home .card {
-    border: solid black 1px;
+    /* border: solid black 1px; */
 }
 
 #home .thumbnail {
-    border: solid black 1px;
-    width: 100px;
-    height: 100px;
+    /* border: solid black 1px; */
+    width: 150px;
+    height: 150px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
 }
 
 #home .details {
-    border: solid black 1px;
+    /* border: solid black 1px; */
+    font-family: 'Press Start 2P', cursive;
+    padding:10px;
+    font-size: .8em;
+}
+
+#home .details div{
+    padding:5px;
 }
