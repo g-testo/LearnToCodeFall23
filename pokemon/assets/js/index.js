@@ -2,11 +2,13 @@
 
 window.onload = () => {
     addTypeFilterIcons();
-    // getAllPokemonList();
+    getAllPokemonList();
 };
 
 const addTypeFilterIcons = () => {
     let typesContainer = document.getElementById("search-sort-filter-container");
+    let listEl = document.getElementById("list");
+
     let types = [
         {
             name: "fire",
@@ -19,9 +21,9 @@ const addTypeFilterIcons = () => {
             iconPath: "assets/images/icons/grass.png",
         },
         {
-            name: "lightning",
+            name: "electric",
             hoverBackgroundColor: "yellow",
-            iconPath: "assets/images/icons/lightning.png",
+            iconPath: "assets/images/icons/electric.png",
         },
         {
             name: "water",
@@ -35,46 +37,58 @@ const addTypeFilterIcons = () => {
         },
     ];
 
-    // displayText: "Grass",
-    // hoverBackgroundColor: "lightGreen",
-    // iconPath: "assets/images/icons/grass.png",
-
-    for(let type of types){
+    for (let type of types) {
         let iconContainerEl = document.createElement("div");
-        iconContainerEl.className = "icon-container";
+        iconContainerEl.className = "icon-container " + type.name;
 
-        iconContainerEl.onmouseover=()=>{
+        iconContainerEl.onmouseover = () => {
             iconContainerEl.style.backgroundColor = type.hoverBackgroundColor;
-        }
+        };
 
-        iconContainerEl.onmouseleave=()=>{
+        iconContainerEl.onmouseleave = () => {
             iconContainerEl.style.backgroundColor = "white";
-        }
+        };
 
-        iconContainerEl.onclick=()=>{
-            let allTypeIconEls = document.getElementsByClassName("icon-container");
-            for(let iconEl of allTypeIconEls){
-                iconEl.style.color = "black";
-                // iconContainerEl.style.textDecoration = "none";
+        iconContainerEl.onclick = () => {
+            
+            let currentActiveEl = document.querySelector(".active");
+            if (currentActiveEl) {
+                currentActiveEl.classList.remove("active");
             }
+            iconContainerEl.classList.add("active");
 
-            iconContainerEl.style.color = "red";
-            // iconContainerEl.style.textDecoration = "underline";
-        }
+
+            // Erase all pokemon
+            listEl.innerHTML = "";
+            // Add pokemon that match currently selected type
+            getPokemonListByType(type.name);
+        };
 
         iconContainerEl.innerHTML = `
             <img src=${type.iconPath} alt="fire type" />
             <div>${type.name}</div>
         `;
-        
-        typesContainer.appendChild(iconContainerEl);
 
+        typesContainer.appendChild(iconContainerEl);
     }
+};
+
+let getPokemonListByType = (type) => {
+    // Get pokemon by type
+    fetch(`https://pokeapi.co/api/v2/type/${type}`)
+        .then((res) => res.json())
+        .then((typeDetails) => {
+            let pokeList = typeDetails.pokemon;
+            for (let item of pokeList) {
+                // Get details about each pokemon
+                getPokemonDetails(item.pokemon);
+            }
+        });
 };
 
 let getAllPokemonList = () => {
     // Get all pokemon
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=2")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=6")
         .then((res) => res.json())
         .then((data) => {
             let pokeList = data.results;

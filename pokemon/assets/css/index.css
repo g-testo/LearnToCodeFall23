@@ -98,3 +98,28 @@ nav {
 .custom-shape-divider-top-1701369213 .shape-fill {
     fill: #ffebeb;
 }
+
+.active{
+    color:red;
+    text-decoration: underline;
+}
+
+.active.fire{
+    color: red;
+}
+
+.active.grass{
+    color: lightgreen;
+}
+
+.active.electric{
+    color: yellow;
+}
+
+.active.water{
+    color: blue;
+}
+
+.active.bug{
+    color: green;
+}
