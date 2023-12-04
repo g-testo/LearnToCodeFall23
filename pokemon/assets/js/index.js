@@ -1,17 +1,17 @@
 // https://pokeapi.co/api/v2/type/grass
 
 import { capitalize } from "./utils.js";
-// Capitalize
-// ConvertToLbs
 
-// Helper/Utility function
+let decimalPlace = 2;
 
-// Convert decimeters to feet
-// take messurement divide by 10, then multiply by 3 
-// 10 => 1 => 3
-// 11 => 1.1 => 3.3
-// 20 => 2 => 6
-// 17 => 1.7 => 5.1
+let convertDeciToFeet = (decimeters) => {
+    let meters = decimeters / 10;
+    return (meters * 3.28084).toFixed(decimalPlace);
+};
+
+let convertHectoToLbs = (hectograms) => {
+    return (hectograms / 4.5359237).toFixed(decimalPlace);
+};
 
 window.onload = () => {
     addTypeFilterIcons();
@@ -23,6 +23,11 @@ const addTypeFilterIcons = () => {
     let listEl = document.getElementById("list");
 
     let types = [
+        {
+            name: "all",
+            hoverBackgroundColor: "lightGray",
+            iconPath: "assets/images/icons/fire.png",
+        },
         {
             name: "fire",
             hoverBackgroundColor: "red",
@@ -63,13 +68,11 @@ const addTypeFilterIcons = () => {
         };
 
         iconContainerEl.onclick = () => {
-            
             let currentActiveEl = document.querySelector(".active");
             if (currentActiveEl) {
                 currentActiveEl.classList.remove("active");
             }
             iconContainerEl.classList.add("active");
-
 
             // Erase all pokemon
             listEl.innerHTML = "";
@@ -87,21 +90,25 @@ const addTypeFilterIcons = () => {
 };
 
 let getPokemonListByType = (type) => {
-    // Get pokemon by type
-    fetch(`https://pokeapi.co/api/v2/type/${type}`)
-        .then((res) => res.json())
-        .then((typeDetails) => {
-            let pokeList = typeDetails.pokemon;
-            for (let item of pokeList) {
-                // Get details about each pokemon
-                getPokemonDetails(item.pokemon);
-            }
-        });
+    if (type === "all") {
+        getAllPokemonList();
+    } else {
+        // Get pokemon by type
+        fetch(`https://pokeapi.co/api/v2/type/${type}`)
+            .then((res) => res.json())
+            .then((typeDetails) => {
+                let pokeList = typeDetails.pokemon;
+                for (let item of pokeList) {
+                    // Get details about each pokemon
+                    getPokemonDetails(item.pokemon);
+                }
+            });
+    }
 };
 
 let getAllPokemonList = () => {
     // Get all pokemon
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=6")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=3")
         .then((res) => res.json())
         .then((data) => {
             let pokeList = data.results;
@@ -132,8 +139,8 @@ let getPokemonDetails = (pokemon) => {
                             <div class="details">
                                 <div>Name: ${capitalize(pokeDetails.name)}</div>
                                 <div>Type: ${typeStrArr.join(", ")}</div>
-                                <div>Height: ${pokeDetails.height} meter(s)</div>
-                                <div>Weight: ${pokeDetails.weight} lb(s)</div>
+                                <div>Height: ${convertDeciToFeet(pokeDetails.height)} feet</div>
+                                <div>Weight: ${convertHectoToLbs(pokeDetails.weight)} lb(s)</div>
                             </div>`;
             listEl.appendChild(cardDiv);
         });
