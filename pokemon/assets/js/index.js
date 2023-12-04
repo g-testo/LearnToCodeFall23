@@ -1,5 +1,18 @@
 // https://pokeapi.co/api/v2/type/grass
 
+import { capitalize } from "./utils.js";
+// Capitalize
+// ConvertToLbs
+
+// Helper/Utility function
+
+// Convert decimeters to feet
+// take messurement divide by 10, then multiply by 3 
+// 10 => 1 => 3
+// 11 => 1.1 => 3.3
+// 20 => 2 => 6
+// 17 => 1.7 => 5.1
+
 window.onload = () => {
     addTypeFilterIcons();
     getAllPokemonList();
@@ -66,7 +79,7 @@ const addTypeFilterIcons = () => {
 
         iconContainerEl.innerHTML = `
             <img src=${type.iconPath} alt="fire type" />
-            <div>${type.name}</div>
+            <div>${capitalize(type.name)}</div>
         `;
 
         typesContainer.appendChild(iconContainerEl);
@@ -104,7 +117,7 @@ let getPokemonDetails = (pokemon) => {
     fetch(pokemon.url)
         .then((res) => res.json())
         .then((pokeDetails) => {
-            let typeStrArr = pokeDetails.types.map((item) => item.type.name);
+            let typeStrArr = pokeDetails.types.map((item) => capitalize(item.type.name));
             let cardDiv = document.createElement("div");
             cardDiv.className = "card";
 
@@ -117,7 +130,7 @@ let getPokemonDetails = (pokemon) => {
                                 "
                             ></div>
                             <div class="details">
-                                <div>Name: ${pokeDetails.name}</div>
+                                <div>Name: ${capitalize(pokeDetails.name)}</div>
                                 <div>Type: ${typeStrArr.join(", ")}</div>
                                 <div>Height: ${pokeDetails.height} meter(s)</div>
                                 <div>Weight: ${pokeDetails.weight} lb(s)</div>
