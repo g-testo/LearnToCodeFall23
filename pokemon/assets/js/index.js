@@ -128,6 +128,10 @@ let getPokemonDetails = (pokemon) => {
             let cardDiv = document.createElement("div");
             cardDiv.className = "card";
 
+            cardDiv.onclick = ()=>{
+                window.location.href = 'singlePokemon.html?name=' + pokeDetails.name;
+            }
+
             cardDiv.innerHTML = `<div
                                 class="thumbnail"
                                 style="
@@ -139,7 +143,7 @@ let getPokemonDetails = (pokemon) => {
                             <div class="details">
                                 <div>Name: ${capitalize(pokeDetails.name)}</div>
                                 <div>Type: ${typeStrArr.join(", ")}</div>
-                                <div>Height: ${convertDeciToFeet(pokeDetails.height)} feet</div>
+                                <div>Height: ${convertDeciToFeet(pokeDetails.height)} ${pokeDetails.height === 1 ? "Foot" : "Feet"}</div>
                                 <div>Weight: ${convertHectoToLbs(pokeDetails.weight)} lb(s)</div>
                             </div>`;
             listEl.appendChild(cardDiv);
