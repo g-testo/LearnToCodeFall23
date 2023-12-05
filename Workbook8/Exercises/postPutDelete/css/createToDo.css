@@ -1,0 +1,18 @@
+#response-message {
+    margin: 10px;
+    font-family: monospace;
+    text-transform: uppercase;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.success {
+    background-color: #e2ffe2;
+}
+
+.error {
+    background-color: #ffe1e2;
+}

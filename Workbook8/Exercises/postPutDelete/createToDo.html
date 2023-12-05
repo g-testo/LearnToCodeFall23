@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/createToDo.css" rel="stylesheet" />
-</head>
-<body>
-    <ul>
-        <li>
-            <a href="./index.html">Home</a>
-        </li>
-        <li>
-            <a href="./createToDo.html">Create ToDo</a>
-        </li>
-    </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="css/createToDo.css" rel="stylesheet" />
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a href="./index.html">Home</a>
+            </li>
+            <li>
+                <a href="./createToDo.html">Create ToDo</a>
+            </li>
+        </ul>
 
-    <h1>Create</h1>
+        <h1>Create</h1>
+        <!-- {
+        "userId": 1,
+        "title": "delectus aut autem",
+        "completed": false
+    } -->
 
-    <script src="js/createToDo.js"></script>
-</body>
+        <form id="create-todo-form">
+            <div id="response-message"></div>
+            <div>
+                <label for="user-id">Please enter user id:</label>
+                <input id="user-id" type="number" required />
+            </div>
+
+            <div>
+                <label for="title">Please enter ToDo title:</label>
+                <input id="title" type="text" required />
+            </div>
+            <div>
+                <input id="submit-btn" type="submit" />
+            </div>
+        </form>
+
+        <script src="js/createToDo.js"></script>
+    </body>
 </html>
