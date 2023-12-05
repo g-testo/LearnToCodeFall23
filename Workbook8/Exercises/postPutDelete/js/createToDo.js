@@ -13,7 +13,7 @@ window.onload = () => {
             setTimeout(()=>{
                 responseMessageEl.textContent = ``;
                 responseMessageEl.classList.remove(response);
-            }, 2000);
+            }, 4000);
         }
 
         fetch("https://jsonplaceholder.typicode.com/todos", {
