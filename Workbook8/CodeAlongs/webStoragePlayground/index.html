@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input id="favorite-animal" placeholder="Enter favorite animal" />
+        <button id="save-btn">Save</button>
+
+        <script>
+            window.onload = () => {
+
+                // Get fav animal from storage and set the value of the input field
+                // let favAnimalFromStorage  = localStorage.getItem("favAnimal");
+                let favAnimalFromSession = sessionStorage.getItem("favAnimal");
+                document.getElementById("favorite-animal").value = favAnimalFromSession;
+
+                // When save button is clicked, save current input value to storage
+                let saveBtnEl = document.getElementById("save-btn");
+                saveBtnEl.onclick = () => {
+                    let favoriteAnimalVal = document.getElementById("favorite-animal").value;
+                    sessionStorage.setItem("favAnimal", favoriteAnimalVal);
+                    // localStorage.setItem("favAnimal", favoriteAnimalVal);
+                };
+            };
+        </script>
+    </body>
+</html>
