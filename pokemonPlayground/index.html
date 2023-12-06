@@ -7,8 +7,23 @@
         <link href="index.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="pokemon-container">
-        </div>
+        <label for="search">Please enter a pokemon to search: </label>
+        <input id="search" />
+        <br />
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+            <option>Id</option>
+            <option>Name</option>
+            <option>Height</option>
+            <option>Weight</option>
+            <option>Type</option>
+        </select>
+        <label for="isDefault">Is default? </label>
+        <input id="isDefault" type="checkbox" />
+
+        <hr />
+
+        <div id="pokemon-container"></div>
 
         <script src="index.js"></script>
     </body>

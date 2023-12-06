@@ -1,0 +1,10 @@
+#pokemon-container{
+    display: grid;
+    grid-template-columns: repeat(6, 5fr);
+}
+.card{
+    text-align: center;
+}
+.card img{
+    width: 100px;
+}
