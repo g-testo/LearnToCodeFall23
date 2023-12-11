@@ -1,5 +1,3 @@
-// https://pokeapi.co/api/v2/type/grass
-
 import { capitalize } from "./utils.js";
 
 let decimalPlace = 2;
@@ -94,58 +92,48 @@ let getPokemonListByType = (type) => {
         getAllPokemonList();
     } else {
         // Get pokemon by type
-        fetch(`https://pokeapi.co/api/v2/type/${type}`)
+        fetch(`https://pokemon-backend-dfea.onrender.com/api/pokemon?type=${type}`)
             .then((res) => res.json())
-            .then((typeDetails) => {
-                let pokeList = typeDetails.pokemon;
-                for (let item of pokeList) {
-                    // Get details about each pokemon
-                    getPokemonDetails(item.pokemon);
-                }
+            .then((pokemonList) => {
+                displayPokemonDetails(pokemonList);
             });
     }
 };
 
 let getAllPokemonList = () => {
     // Get all pokemon
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=3")
+    fetch("https://pokemon-backend-dfea.onrender.com/api/pokemon")
         .then((res) => res.json())
-        .then((data) => {
-            let pokeList = data.results;
-            for (let pokemon of pokeList) {
-                // Get details about each pokemon
-                getPokemonDetails(pokemon);
-            }
+        .then((pokemonList) => {
+            displayPokemonDetails(pokemonList);
         });
 };
 
-let getPokemonDetails = (pokemon) => {
+let displayPokemonDetails = (pokemonList) => {
     let listEl = document.getElementById("list");
-    fetch(pokemon.url)
-        .then((res) => res.json())
-        .then((pokeDetails) => {
-            let typeStrArr = pokeDetails.types.map((item) => capitalize(item.type.name));
-            let cardDiv = document.createElement("div");
-            cardDiv.className = "card";
+    for (let pokeDetails of pokemonList) {
+        let typeStrArr = pokeDetails.types.map((typeName) => capitalize(typeName));
+        let cardDiv = document.createElement("div");
+        cardDiv.className = "card";
 
-            cardDiv.onclick = ()=>{
-                window.location.href = 'singlePokemon.html?name=' + pokeDetails.name;
-            }
+        cardDiv.onclick = () => {
+            window.location.href = "singlePokemon.html?name=" + pokeDetails.name;
+        };
 
-            cardDiv.innerHTML = `<div
-                                class="thumbnail"
-                                style="
-                                    background-image: url(${
-                                        pokeDetails.sprites.other["official-artwork"].front_default
-                                    });
-                                "
-                            ></div>
-                            <div class="details">
-                                <div>Name: ${capitalize(pokeDetails.name)}</div>
-                                <div>Type: ${typeStrArr.join(", ")}</div>
-                                <div>Height: ${convertDeciToFeet(pokeDetails.height)} ${pokeDetails.height === 1 ? "Foot" : "Feet"}</div>
-                                <div>Weight: ${convertHectoToLbs(pokeDetails.weight)} lb(s)</div>
-                            </div>`;
-            listEl.appendChild(cardDiv);
-        });
+        cardDiv.innerHTML = `<div
+                            class="thumbnail"
+                            style="
+                                background-image: url(${pokeDetails.official_artwork_default});
+                            "
+                        ></div>
+                        <div class="details">
+                            <div>Name: ${capitalize(pokeDetails.name)}</div>
+                            <div>Type: ${typeStrArr.join(", ")}</div>
+                            <div>Height: ${convertDeciToFeet(pokeDetails.height)} ${
+            pokeDetails.height === 1 ? "Foot" : "Feet"
+        }</div>
+                            <div>Weight: ${convertHectoToLbs(pokeDetails.weight)} lb(s)</div>
+                        </div>`;
+        listEl.appendChild(cardDiv);
+    }
 };
