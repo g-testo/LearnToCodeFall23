@@ -21,9 +21,18 @@ class Student {
         this.isEnrolled = isEnrolled;
         this.location = location;
     }
+
+    getDetails(){
+        return `The student, ${this.name} is located in ${this.location}`;
+    }
 }
 // Creating instances from class Student
 let student1 = new Student(1, "Rose", true, "Atlanta, GA");
 let student2 = new Student(2, "Amaris", true, "Tampa, FL");
-console.log(student1.name);
-console.log(student2.name);
+
+let result1 = student1.getDetails();
+console.log(result1);
+let result2 = student2.getDetails();
+console.log(result2);
+// console.log(student1.name);
+// console.log(student2.name);
