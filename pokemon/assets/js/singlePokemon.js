@@ -12,4 +12,10 @@ window.onload = () => {
     //      pokemonEl.innerHTML = `<div>${pokemon.name}</div>`
 
     //      Replacement placement el
+
+    // Add Delete button
+    // Add fetch that deletes pokemon
+    // Redirect to index.html
+
+    // Work on update pokemon page using LearnToCode/Workbook8/codealongs/coursesTwoExercise
 };
