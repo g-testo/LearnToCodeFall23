@@ -1,15 +1,4 @@
-import { capitalize } from "./utils.js";
-
-let decimalPlace = 2;
-
-let convertDeciToFeet = (decimeters) => {
-    let meters = decimeters / 10;
-    return (meters * 3.28084).toFixed(decimalPlace);
-};
-
-let convertHectoToLbs = (hectograms) => {
-    return (hectograms / 4.5359237).toFixed(decimalPlace);
-};
+import { capitalize, convertDeciToFeet, convertHectoToLbs } from "./utils.js";
 
 window.onload = () => {
     addTypeFilterIcons();

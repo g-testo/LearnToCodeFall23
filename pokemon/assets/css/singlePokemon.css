@@ -1,0 +1,13 @@
+#single-pokemon{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.single-pokemon-details .moves {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.single-pokemon-details li{
+    list-style-type: none;
+}
