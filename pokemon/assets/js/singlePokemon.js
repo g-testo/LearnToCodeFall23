@@ -1,6 +1,5 @@
 import { capitalize, convertDeciToFeet, convertHectoToLbs } from "./utils.js";
 
-
 window.onload = () => {
     // Grab pokemon
     //      Part 1
@@ -22,19 +21,41 @@ window.onload = () => {
             //          Create placement for pokemon in singlePokemon.html (HTML)
             //          Get the placement El using getElementById
             let singlePokemonEl = document.getElementById("single-pokemon");
-            //      Create a pokemon El using data from above (Jonathan Style)
-            let pokemonMovesElArr = singlePokemon.moves.map((move)=>{
-                return `<li>${move}</li>`;
+            // [
+            //     {
+            //         "title": "Back Default",
+            //         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png"
+            //     }, {}, {}
+            // ]
+
+            let pokemonImagesArr = singlePokemon.alt_images.map((alt_image) => {
+                return `<li><img src=${alt_image.url} alt=${singlePokemon.name} /></li>`;
             });
 
-            
-            singlePokemonEl.innerHTML = `<div class="single-pokemon-details">
-                <img width=300 src=${singlePokemon.official_artwork_default} alt=${singlePokemon.name}/>
-                <p>Name: ${capitalize(singlePokemon.name)}</p>
-                <p>Height: ${convertDeciToFeet(singlePokemon.height)} ${singlePokemon.height === 1 ? "Foot" : "Feet"}</p>
-                <p>Weight: ${convertHectoToLbs(singlePokemon.weight)} lb(s)</p>
-                <ul class="moves">
-                    ${pokemonMovesElArr.join("")}
+            // [
+            //     `<img src=${} />`
+            // ]
+
+            let pokemonMovesElArr = singlePokemon.moves.map((move) => {
+                return `<li>${capitalize(move)}</li>`;
+            });
+            //      Create a pokemon El using data from above (Jonathan Style)
+            singlePokemonEl.innerHTML = `<div id="single-pokemon-details">
+                <div id="main-image-container">
+                    <img src=${singlePokemon.official_artwork_default} alt=${singlePokemon.name}/>
+                </div>
+                <p><b>Name: </b>${capitalize(singlePokemon.name)}</p>
+                <p><b>Height: </b>${convertDeciToFeet(singlePokemon.height)} ${
+                singlePokemon.height === 1 ? "Foot" : "Feet"
+            }</p>
+                <p><b>Weight: </b>${convertHectoToLbs(singlePokemon.weight)} lb(s)</p>
+                <p><b>Alternative Images: </b></p>
+                <ul id="alt-images">
+                    ${pokemonImagesArr.join("")}
+                </ul>
+                <p><b>Moves: </b></p>
+                <ul id="moves">
+                    ${pokemonMovesElArr.join("") /* .join: Remove commas from displaying an array */}
                 </ul>
 
             </div>`;

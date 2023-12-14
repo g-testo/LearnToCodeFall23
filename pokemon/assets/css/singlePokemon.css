@@ -3,11 +3,24 @@
     margin: 0 auto;
 }
 
-.single-pokemon-details .moves {
+#single-pokemon-details #main-image-container img{
+    width: 300px;
+}
+
+#single-pokemon-details #alt-images img{
+    width: 75px;
+}
+
+#single-pokemon-details #alt-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#single-pokemon-details #moves {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.single-pokemon-details li{
+#single-pokemon-details li{
     list-style-type: none;
 }
