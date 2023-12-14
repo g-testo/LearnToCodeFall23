@@ -1,6 +1,7 @@
-import { capitalize, convertDeciToFeet, convertHectoToLbs } from "./utils.js";
+import { capitalize, convertDeciToFeet, convertHectoToLbs, addGoogleFontToBody } from "./utils.js";
 
 window.onload = () => {
+    addGoogleFontToBody();
     // Grab pokemon
     //      Part 1
     //          URLSearchParams: to get the name of pokemon from URL
@@ -49,6 +50,11 @@ window.onload = () => {
                 singlePokemon.height === 1 ? "Foot" : "Feet"
             }</p>
                 <p><b>Weight: </b>${convertHectoToLbs(singlePokemon.weight)} lb(s)</p>
+                <p>
+                    <b>Admin Actions:</b>
+                    <button id="update-btn">Update</button>
+                    <button id="delete-btn">Release</button>
+                </p>
                 <p><b>Alternative Images: </b></p>
                 <ul id="alt-images">
                     ${pokemonImagesArr.join("")}
@@ -59,7 +65,21 @@ window.onload = () => {
                 </ul>
 
             </div>`;
-            //      pokemonEl.innerHTML = `<div>${pokemon.name}</div>`
+            let updateBtn = document.getElementById("update-btn");
+            let deleteBtn = document.getElementById("delete-btn");
+
+            updateBtn.onclick = () => {
+                location.href = "updatePokemon.html";
+            }
+
+            deleteBtn.onclick = () => {
+                fetch(`https://pokemon-backend-dfea.onrender.com/api/pokemon/${pokemonName}`, {
+                    method: "DELETE",
+                }).then((res) => {
+                    location.href = "index.html";
+                });
+            };
+
 
             //      Replacement placement el
         });

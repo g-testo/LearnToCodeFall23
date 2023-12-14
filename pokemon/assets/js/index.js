@@ -1,6 +1,7 @@
-import { capitalize, convertDeciToFeet, convertHectoToLbs } from "./utils.js";
+import { capitalize, convertDeciToFeet, convertHectoToLbs, addGoogleFontToBody } from "./utils.js";
 
 window.onload = () => {
+    addGoogleFontToBody();
     addTypeFilterIcons();
     getAllPokemonList();
 };

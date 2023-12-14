@@ -1,3 +1,7 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+}
+
 #single-pokemon{
     max-width: 600px;
     margin: 0 auto;

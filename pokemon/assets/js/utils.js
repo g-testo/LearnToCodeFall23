@@ -13,8 +13,21 @@ let convertHectoToLbs = (hectograms) => {
     return (hectograms / 4.5359237).toFixed(decimalPlace);
 };
 
+let addGoogleFontToBody = () => {
+    // Create and render the google fonts API
+    let headEl = document.querySelector("head");
+    let googleFontEl = document.createElement("link");
+    googleFontEl.href = "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap";
+    googleFontEl.rel = "stylesheet";
+    headEl.appendChild(googleFontEl);
+
+    let bodyEl = document.querySelector("body");
+    bodyEl.style["font-family"] = "'Press Start 2P', cursive";
+};
+
 export {
     capitalize,
     convertDeciToFeet,
-    convertHectoToLbs
+    convertHectoToLbs,
+    addGoogleFontToBody
 }
