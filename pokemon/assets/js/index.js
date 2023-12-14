@@ -102,7 +102,8 @@ let getAllPokemonList = () => {
 let displayPokemonDetails = (pokemonList) => {
     let listEl = document.getElementById("list");
     for (let pokeDetails of pokemonList) {
-        let typeStrArr = pokeDetails.types.map((typeName) => capitalize(typeName));
+        
+        let typeStrArr = pokeDetails.types?.map((typeName) => capitalize(typeName));
         let cardDiv = document.createElement("div");
         cardDiv.className = "card";
 
@@ -118,7 +119,7 @@ let displayPokemonDetails = (pokemonList) => {
                         ></div>
                         <div class="details">
                             <div>Name: ${capitalize(pokeDetails.name)}</div>
-                            <div>Type: ${typeStrArr.join(", ")}</div>
+                            <div>Type: ${typeStrArr?.join(", ")}</div>
                             <div>Height: ${convertDeciToFeet(pokeDetails.height)} ${
             pokeDetails.height === 1 ? "Foot" : "Feet"
         }</div>
