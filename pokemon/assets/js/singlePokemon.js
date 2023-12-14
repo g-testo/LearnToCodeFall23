@@ -29,7 +29,7 @@ window.onload = () => {
             //     }, {}, {}
             // ]
 
-            let pokemonImagesArr = singlePokemon.alt_images.map((alt_image) => {
+            let pokemonImagesArr = singlePokemon.alt_images?.map((alt_image) => {
                 return `<li><img src=${alt_image.url} alt=${singlePokemon.name} /></li>`;
             });
 
@@ -37,7 +37,7 @@ window.onload = () => {
             //     `<img src=${} />`
             // ]
 
-            let pokemonMovesElArr = singlePokemon.moves.map((move) => {
+            let pokemonMovesElArr = singlePokemon.moves?.map((move) => {
                 return `<li>${capitalize(move)}</li>`;
             });
             //      Create a pokemon El using data from above (Jonathan Style)
@@ -57,11 +57,11 @@ window.onload = () => {
                 </p>
                 <p><b>Alternative Images: </b></p>
                 <ul id="alt-images">
-                    ${pokemonImagesArr.join("")}
+                    ${pokemonImagesArr?.join("")}
                 </ul>
                 <p><b>Moves: </b></p>
                 <ul id="moves">
-                    ${pokemonMovesElArr.join("") /* .join: Remove commas from displaying an array */}
+                    ${pokemonMovesElArr?.join("") /* .join: Remove commas from displaying an array */}
                 </ul>
 
             </div>`;
