@@ -69,7 +69,7 @@ window.onload = () => {
             let deleteBtn = document.getElementById("delete-btn");
 
             updateBtn.onclick = () => {
-                location.href = "updatePokemon.html";
+                location.href = `updatePokemon.html?name=${pokemonName}`;
             }
 
             deleteBtn.onclick = () => {
