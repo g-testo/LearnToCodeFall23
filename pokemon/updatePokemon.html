@@ -8,6 +8,32 @@
     </head>
     <body>
         <h1>Update Pokemon</h1>
+        <!-- {
+              "official_artwork_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+              "height": 4,
+              "weight": 60,
+              "isDefault": true,
+            } -->
+        <form>
+            <div>
+                <label for="image">Image</label>
+                <input id="image" type="text" />
+            </div>
+            <div>
+                <label for="height">Height</label>
+                <input id="height" type="text" />
+            </div>
+            <div>
+                <label for="weight">Weight</label>
+                <input id="weight" type="text" />
+            </div>
+            <div>
+                <label for="isDefault">Is Default</label>
+                <input id="isDefault" type="checkbox"/>
+            </div>
+            <input type="submit" value="Update" />
+        </form>
+
         <script type="module" src="assets/js/updatePokemon.js"></script>
     </body>
 </html>

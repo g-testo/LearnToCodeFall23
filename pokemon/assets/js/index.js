@@ -14,7 +14,7 @@ const addTypeFilterIcons = () => {
         {
             name: "all",
             hoverBackgroundColor: "lightGray",
-            iconPath: "assets/images/icons/fire.png",
+            iconPath: "assets/images/icons/all.png",
         },
         {
             name: "fire",
