@@ -102,7 +102,18 @@ let getAllPokemonList = () => {
 let displayPokemonDetails = (pokemonList) => {
     let listEl = document.getElementById("list");
     for (let pokeDetails of pokemonList) {
-        
+        // If there is gif use it otherwise you the static image
+
+        // let imageToDisplay;
+        // if(pokeDetails.official_artwork_gif){
+        //     imageToDisplay = pokeDetails.official_artwork_gif;
+        // } else {
+        //     imageToDisplay = pokeDetails.official_artwork_default;
+        // }
+        let imageToDisplay = pokeDetails.official_artwork_gif
+            ? pokeDetails.official_artwork_gif
+            : pokeDetails.official_artwork_default;
+
         let typeStrArr = pokeDetails.types?.map((typeName) => capitalize(typeName));
         let cardDiv = document.createElement("div");
         cardDiv.className = "card";
@@ -114,7 +125,7 @@ let displayPokemonDetails = (pokemonList) => {
         cardDiv.innerHTML = `<div
                             class="thumbnail"
                             style="
-                                background-image: url(${pokeDetails.official_artwork_default});
+                                background-image: url(${imageToDisplay});
                             "
                         ></div>
                         <div class="details">
